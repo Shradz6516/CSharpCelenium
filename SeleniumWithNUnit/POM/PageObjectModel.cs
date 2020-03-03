@@ -23,10 +23,14 @@ namespace SeleniumWithNUnit.POM
 
         internal void FillUserForm(string initial, string firstName, string middleName)
         {
-            InitialText.SendKeys(initial);
-            FirstName.SendKeys(firstName);
-            MiddleName.SendKeys(middleName);
-            SaveButton.Click();
+            CustomLibrary.EnterText(InitialText, initial);
+            CustomLibrary.EnterText(FirstName, firstName);
+            CustomLibrary.EnterText(MiddleName, middleName);
+            CustomLibrary.Click(SaveButton);
+            //InitialText.SendKeys(initial);
+            //FirstName.SendKeys(firstName);
+            //MiddleName.SendKeys(middleName);
+            //SaveButton.Click();
         }
 
         [FindsBy(How = How.Name, Using = "Save")]
