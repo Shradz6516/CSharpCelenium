@@ -19,5 +19,22 @@ namespace SeleniumWithNUnit.POM
 
         [FindsBy(How = How.Id, Using = "Initial")]
         public IWebElement InitialText { get; set; }
+
+        [FindsBy(How = How.Name, Using = "FirstName")]
+        public IWebElement FirstName { get; set; }
+
+        [FindsBy(How = How.Name, Using = "MiddleName")]
+        public IWebElement MiddleName { get; set; }
+
+        internal void FillUserForm(string initial, string firstName, string middleName)
+        {
+            InitialText.SendKeys(initial);
+            FirstName.SendKeys(firstName);
+            MiddleName.SendKeys(middleName);
+            SaveButton.Click();
+        }
+
+        [FindsBy(How = How.Name, Using = "Save")]
+        public IWebElement SaveButton { get; set; }
     }
 }

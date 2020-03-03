@@ -74,10 +74,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Demo3WithNormal\TestClass.cs" />
     <Compile Include="POM\GenericCollection.cs" />
     <Compile Include="Demo2WithSetandGetMethods\GetValuesFromElements.cs" />
+    <Compile Include="POM\LoginPageObjectModel.cs" />
     <Compile Include="POM\PageObjectModel.cs" />
-    <Compile Include="POM\PerformAction.cs" />
+    <Compile Include="Demo3WithNormal\PerformAction.cs" />
     <Compile Include="Demo2WithSetandGetMethods\SetValuesToElements.cs" />
     <Compile Include="Demo2WithSetandGetMethods\CustomMethods.cs" />
     <Compile Include="POM\Program.cs" />
