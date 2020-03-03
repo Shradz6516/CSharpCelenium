@@ -12,26 +12,28 @@ namespace SeleniumWithNUnit
 {
     class Program
     {
+        IWebDriver driver = new ChromeDriver();
+        
         [SetUp]
         public void Initialize()
         {
-            GenericCollection.driver = new ChromeDriver();
-            GenericCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
+            driver.Navigate().GoToUrl("https://www.google.com/");
         }
 
         [Test]
         public void Execute()
         {
-            LoginPageObjectModel loginPage = new LoginPageObjectModel();
-            PageObjectModel page = loginPage.Login("Shraddha", "Password");
-            page.FillUserForm("Execute Automation", "Shraddha", "Amol");
-                   
+            PageObjectModel page = new PageObjectModel();
+            page.InitialText.SendKeys("executeAutomation");
+
+            //driver.FindElement(By.Name("q")).SendKeys("Learn Automation");
+            
         }
 
         [TearDown]
         public void Cleanup()
         {
-            GenericCollection.driver.Close();
+            driver.Close();
         }
     }
 }

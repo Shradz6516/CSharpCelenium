@@ -16,7 +16,6 @@ namespace SeleniumWithNUnit
         public void Initialize()
         {
             driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }
 
         [Test]
