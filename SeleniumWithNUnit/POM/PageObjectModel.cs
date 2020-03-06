@@ -21,16 +21,12 @@ namespace SeleniumWithNUnit.POM
         [FindsBy(How = How.Name, Using = "MiddleName")]
         public IWebElement MiddleName { get; set; }
 
-        internal void FillUserForm(string initial, string firstName, string middleName)
+        internal void FillUserFormUsingCustomLibrary(string initial, string firstName, string middleName)
         {
             CustomLibrary.EnterText(InitialText, initial);
             CustomLibrary.EnterText(FirstName, firstName);
             CustomLibrary.EnterText(MiddleName, middleName);
             CustomLibrary.Click(SaveButton);
-            //InitialText.SendKeys(initial);
-            //FirstName.SendKeys(firstName);
-            //MiddleName.SendKeys(middleName);
-            //SaveButton.Click();
         }
 
         [FindsBy(How = How.Name, Using = "Save")]

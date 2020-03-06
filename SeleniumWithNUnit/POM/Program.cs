@@ -18,7 +18,7 @@ namespace SeleniumWithNUnit
         {
             LoginPageObjectModel loginPage = new LoginPageObjectModel();
             PageObjectModel page = loginPage.Login("Shraddha", "Password");
-            page.FillUserForm("Execute Automation", "Shraddha", "Amol");
+            page.FillUserFormUsingCustomLibrary("Execute Automation", "Shraddha", "Amol");
                    
         }
 
