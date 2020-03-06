@@ -17,8 +17,8 @@ namespace SeleniumWithNUnit
 
 
             // Store locator values of email text box and sign up button				
-            IWebElement emailTextBox = m_driver.FindElement(By.CssSelector("input[id=philadelphia-field-email]"));
-            IWebElement signUpButton = m_driver.FindElement(By.CssSelector("input[id=philadelphia-field-submit]"));
+            IWebElement emailTextBox = m_driver.FindElement(By.CssSelector("#philadelphia-field-email"));
+            IWebElement signUpButton = m_driver.FindElement(By.CssSelector("#philadelphia-field-submit"));
 
             emailTextBox.SendKeys("test123@gmail.com");
             signUpButton.Click();

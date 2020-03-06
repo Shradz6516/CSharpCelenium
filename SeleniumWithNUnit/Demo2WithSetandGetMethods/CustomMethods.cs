@@ -11,10 +11,11 @@ namespace SeleniumWithNUnit
 {
     class CustomMethods
     {
-        IWebDriver driver  = new ChromeDriver();
+        IWebDriver driver;
         [SetUp]
         public void Initialize()
         {
+            driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
         }

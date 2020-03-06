@@ -1,35 +1,37 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-
+using System.Threading;
 namespace SeleniumWithNUnit.POM
 {
     class PageObjectModel
     {
-        public PageObjectModel()
-        {
-            PageFactory.InitElements(GenericCollection.driver, this);
-        }
-        [FindsBy(How = How.Id,Using = "TitleId")]
-        public IWebElement TitleId { get; set; }
-
-        [FindsBy(How = How.Id, Using = "Initial")]
-        public IWebElement InitialText { get; set; }
-
-        [FindsBy(How = How.Name, Using = "FirstName")]
-        public IWebElement FirstName { get; set; }
-
-        [FindsBy(How = How.Name, Using = "MiddleName")]
-        public IWebElement MiddleName { get; set; }
+        By TitleId = By.Id("TitleId");
+        By InitialText = By.Id("Initial");
+        By FirstName = By.Id("FirstName");
+        By MiddleName = By.Id("MiddleName");
+        By SaveButton = By.Name("Save");
 
         internal void FillUserForm(string initial, string firstName, string middleName)
         {
-            InitialText.SendKeys(initial);
-            FirstName.SendKeys(firstName);
-            MiddleName.SendKeys(middleName);
-            SaveButton.Click();
+            Sendkey(InitialText, initial);
+            Thread.Sleep(2000);
+            Sendkey(FirstName, firstName);
+            Thread.Sleep(2000);
+            Sendkey(MiddleName, middleName);
+            Thread.Sleep(2000);
+            Click(SaveButton);
         }
 
-        [FindsBy(How = How.Name, Using = "Save")]
-        public IWebElement SaveButton { get; set; }
+        public void Sendkey(By by, string elementvalue )
+        {
+            GenericCollection.driver.FindElement(by).SendKeys(elementvalue);
+        }
+
+        public void Click(By by)
+        {
+            GenericCollection.driver.FindElement(by).Click();
+        }
+
+
     }
 }
