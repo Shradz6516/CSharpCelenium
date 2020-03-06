@@ -21,7 +21,7 @@ namespace SeleniumWithNUnit.POM
         [FindsBy(How = How.Name, Using = "MiddleName")]
         public IWebElement MiddleName { get; set; }
 
-        internal void FillUserForm(string initial, string firstName, string middleName)
+        internal void FillUserFormUsingExtensionMethod(string initial, string firstName, string middleName)
         {
             InitialText.SendKeys(initial);
             FirstName.SendKeys(firstName);
