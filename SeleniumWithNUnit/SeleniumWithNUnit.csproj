@@ -83,6 +83,7 @@
     <Compile Include="Demo2WithSetandGetMethods\SetValuesToElements.cs" />
     <Compile Include="Demo2WithSetandGetMethods\CustomMethods.cs" />
     <Compile Include="POM\Program.cs" />
+    <Compile Include="Popup traversing\PopUpWindowsTestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Demo1WithUsingCSSandXpath\UsingCSSSelector.cs" />
     <Compile Include="Demo1WithUsingCSSandXpath\UsingXpath.cs" />
